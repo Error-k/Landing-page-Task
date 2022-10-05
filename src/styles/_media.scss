@@ -1,0 +1,232 @@
+$blue_01: #1F3F68;
+$blue_02: #316099;
+$blue_04: #5A98D0;
+
+@mixin fontStyling($fz, $c, $lh, $ff, $ls) {
+  font-size: $fz;
+  color: $c;
+  line-height: $lh;
+  font-family: $ff;
+  letter-spacing: $ls;
+}
+
+@mixin buttonStyling($fz, $lh, $ls, $ptb, $plr, $bgc, $br, $c, $shadow) {
+  font-size: $fz;
+  line-height: $lh;
+  letter-spacing: $ls;
+  padding: $ptb $plr;
+  background-color: $bgc;
+  border-radius: $br;
+  color: $c;
+  box-shadow: $shadow;
+}
+
+@media (max-width: 1367px) {
+  .container {
+    max-width: 950px;
+  }
+  .main-frame {
+    background: linear-gradient(rgba(152, 195, 232, 0), #98C3E825), no-repeat 95% 65% url("../images/main-frame__bg-image.png");
+    background-size: auto;
+    &__title {
+      font-size: 64px;
+      letter-spacing: 0.04em;
+    }
+    &__text {
+      font-size: 16px;
+      margin: 30px 0 70px 0;
+    }
+    &__content {
+      margin-top: 65px;
+      padding-bottom: 21%;
+    }
+    &__button {
+      padding: 15px 48px;
+      font-size: 16px;
+      line-height: 162%;
+    }
+  }
+  .help-client {
+    &__title {
+      @include fontStyling(36px, $blue_02, 128%, GilroyBold, 0.05em);
+    }
+  }
+  .our-client {
+    &__header {
+      &_title {
+        width: 35%;
+      }
+      &_description {
+        width: 55%;
+      }
+    }
+  }
+  .work-with-us {
+    &__wrapper {
+      gap: 15%;
+    }
+    &__button {
+      @include buttonStyling(16px, 162%, 0.04em, 15px, 75px, $blue_04, 10px, #fff, 5px 10px 20px rgba(53, 110, 173, 0.2));
+    }
+    &__title-and-description {
+      width: 50%;
+    }
+  }
+  .footer {
+   gap: 60px;
+    &__contacts {
+      width: 35%;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 950px;
+  }
+  .main-frame {
+    background: linear-gradient(rgba(152, 195, 232, 0), #98C3E880);
+  }
+}
+@media (max-width: 992px) {
+  .container {
+    max-width: 870px;
+  }
+  .main-frame {
+    &__text {
+      opacity: 1;
+    }
+  }
+}
+@media (max-width: 870px) {
+  .container {
+    max-width: none;
+  }
+  .main-frame {
+    background: linear-gradient(rgba(152, 195, 232, 0), #98C3E880);
+    &__content {
+      align-items: center;
+      text-align: center;
+    }
+  }
+  .help-client {
+    display: flex;
+    &__cards_wrapper {
+      flex-flow: column wrap;
+      gap: 50px;
+    }
+    &__card {
+      &:nth-child(1) {
+        margin-top: 0;
+        order: 2;
+      }
+      &:nth-child(2) {
+        margin-top: 180px;
+        order: 1;
+      }
+      &:nth-child(3) {
+        margin-top: 0;
+        order: 3;
+      }
+    }
+  }
+  .our-client {
+    &__header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+  }
+  .work-with-us {
+    &__wrapper {
+      flex-direction: column;
+      text-align: center;
+      gap: 0;
+    }
+    &__button {
+      margin-bottom: 40px;
+    }
+    &__title-and-description {
+      width: 70%;
+      margin: 90px 0 40px 0;
+    }
+  }
+  .modal-form {
+    &__form-label {
+      text-align: left;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    margin: 0 0;
+  }
+  .help-client {
+    padding-top: 90px;
+    align-items: center;
+    justify-content: center;
+    &__cards_wrapper {
+      align-items: center;
+    }
+    &__card {
+      height: 420px;
+      width: 304px;
+      padding-top: 140px;
+      padding-left: 20px;
+      &:nth-child(2) {
+        margin-top: 50px;
+      }
+    }
+    &__title {
+      text-align: center;
+      position: static;
+    }
+  }
+  #help-client__card_image1 {
+    transform: scale(0.9);
+    left: 10%;
+    top: 0;
+  }
+  #help-client__card_image2 {
+    transform: scale(0.9);
+    left: 12%;
+    top: -10%;
+  }
+  #help-client__card_image3 {
+    transform: scale(0.9);
+    top: 0%;
+    left: 18%;
+  }
+
+
+  .our-client {
+    &__logos-wrapper {
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    &__logo {
+      width: 80%;
+      &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(5), &:nth-child(6), &:nth-child(7) {
+        border-right: 0;
+      }
+      &:nth-child(5), &:nth-child(6), &:nth-child(7), &:nth-child(8) {
+        border-bottom: 1px solid #ffffff50;
+      }
+    }
+  }
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+    &__contacts {
+      width: 100%;
+    }
+    &__about-us {
+      width: 100%;
+    }
+    &__follow-us {
+      width: 100%;
+    }
+  }
+}
